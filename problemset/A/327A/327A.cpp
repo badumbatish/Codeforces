@@ -23,7 +23,20 @@ typedef map<int, int> MII;
 typedef map<char, int> MCI;
 
 int main() {
+    int n;
+    i(n);
 
+    VI v;
+    int t;
+    int ones=0;
+    int zeros =0;
+    while(n--) {
+        i(t);
+        if(t==1) ones++;
+        if(t==0) zeros++;
+        v.pb(t);
+    }
+    
     
     return 0;
 }

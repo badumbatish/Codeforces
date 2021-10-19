@@ -23,7 +23,24 @@ typedef map<int, int> MII;
 typedef map<char, int> MCI;
 
 int main() {
+    int n;
+    i(n);
 
-    
+    VI v;
+
+    int t;
+    while(n--) {
+        i(t);
+        v.pb(t);
+    }
+    sort(v.begin(),v.end());    
+    i(n);
+
+    while(n--) {
+        i(t);
+        auto low = lower_bound(v.begin(), v.end(), t, less_equal<int>());
+        
+        o(low-v.begin());
+    }
     return 0;
 }
