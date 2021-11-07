@@ -24,28 +24,12 @@ typedef map<char, int> MCI;
 
 int main()
 {
-    std::string str;
-    std::string res;
 
-    std::getline(std::cin, str);
-    for (int i = 0; i < str.size(); i++)
-    {
-        if (str[i] == '.')
-        {
-            res += "0";
-        }
-        // seg fault will not happen
-        else if (str[i] == '-' && str[i + 1] == '.')
-        {
-            res += "1";
-            i++;
-        }
-        else
-        {
-            res += "2";
-            i++;
-        }
-    }
-    o(res);
+    std::string str;
+    std::cin >> str;
+
+    str[0] = toupper(str[0]);
+
+    std::cout << str << std::endl;
     return 0;
 }

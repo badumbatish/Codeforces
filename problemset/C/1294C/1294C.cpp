@@ -3,11 +3,11 @@
 using namespace std;
 
 #define MODU 1000000007
-#define EPS 1e-9 
+#define EPS 1e-9
 #define PI 3.1415926535897932384626433832795
 
 #define i(t) cin >> t
-#define il(t) getline(cin,t)
+#define il(t) getline(cin, t)
 
 #define o(t) cout << t << '\n'
 
@@ -15,23 +15,25 @@ using namespace std;
 
 typedef vector<int> VI;
 typedef vector<vector<int>> VVI;
-typedef vector<pair<int,int>> VPII;
+typedef vector<pair<int, int>> VPII;
 
 typedef vector<string> VS, VSTR;
 
 typedef map<int, int> MII;
 typedef map<char, int> MCI;
 
-int main() {
+int main()
+{
     int64_t n;
     i(n);
 
     int64_t x;
-    while(n--) {
+    while (n--)
+    {
         i(x);
 
         int a, b, c;
-        int64_t temp=x;
+        int64_t temp = x;
 
         bool end = false;
         // We define the stopping limit to be x/i
@@ -53,31 +55,39 @@ int main() {
         // it is the same
 
         // it is the associative property of multiplication
-        for(int i=2;i<=x/i;i++) {
-            if(x%i==0) {
-                temp = x/i;
+        for (int i = 2; i <= x / i; i++)
+        {
+            if (x % i == 0)
+            {
+                temp = x / i;
                 a = i;
-                for(int j=i+1;j<=temp/j;j++) {
-                    if(temp%j == 0) {
+                for (int j = i + 1; j <= temp / j; j++)
+                {
+                    if (temp % j == 0)
+                    {
                         b = j;
-                        if(temp/j > a && temp/j > b) {
-                            c = temp/j;
+                        if (temp / j > a && temp / j > b)
+                        {
+                            c = temp / j;
                             end = true;
                             break;
                         }
                     }
                 }
             }
-            if(end) break;
+            if (end)
+                break;
         }
-        if(end) {
+        if (end)
+        {
             cout << "YES" << endl;
             cout << a << " " << b << " " << c << endl;
-        } else {
+        }
+        else
+        {
             cout << "NO" << endl;
         }
-        
     }
-    
+
     return 0;
 }

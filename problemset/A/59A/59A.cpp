@@ -25,27 +25,34 @@ typedef map<char, int> MCI;
 int main()
 {
     std::string str;
-    std::string res;
+    int count_upper = 0;
+    int count_lower = 0;
 
-    std::getline(std::cin, str);
-    for (int i = 0; i < str.size(); i++)
+    cin >> str;
+    for (char ch : str)
     {
-        if (str[i] == '.')
-        {
-            res += "0";
-        }
-        // seg fault will not happen
-        else if (str[i] == '-' && str[i + 1] == '.')
-        {
-            res += "1";
-            i++;
-        }
+        if (isupper(ch))
+            count_upper++;
         else
-        {
-            res += "2";
-            i++;
-        }
+            count_lower++;
     }
-    o(res);
+    if (count_upper > count_lower)
+    {
+        for (char ch : str)
+        {
+            std::cout << (char)std::toupper(ch);
+        }
+        std::cout << std::endl;
+        return 0;
+    }
+    else
+    {
+        for (char ch : str)
+        {
+            std::cout << (char)std::tolower(ch);
+        }
+        std::cout << std::endl;
+        return 0;
+    }
     return 0;
 }

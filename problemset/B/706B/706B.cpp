@@ -3,11 +3,11 @@
 using namespace std;
 
 #define MODU 1000000007
-#define EPS 1e-9 
+#define EPS 1e-9
 #define PI 3.1415926535897932384626433832795
 
 #define i(t) cin >> t
-#define il(t) getline(cin,t)
+#define il(t) getline(cin, t)
 
 #define o(t) cout << t << '\n'
 
@@ -15,32 +15,35 @@ using namespace std;
 
 typedef vector<int> VI;
 typedef vector<vector<int>> VVI;
-typedef vector<pair<int,int>> VPII;
+typedef vector<pair<int, int>> VPII;
 
 typedef vector<string> VS, VSTR;
 
 typedef map<int, int> MII;
 typedef map<char, int> MCI;
 
-int main() {
+int main()
+{
     int n;
     i(n);
 
     VI v;
 
     int t;
-    while(n--) {
+    while (n--)
+    {
         i(t);
         v.pb(t);
     }
-    sort(v.begin(),v.end());    
+    sort(v.begin(), v.end());
     i(n);
 
-    while(n--) {
+    while (n--)
+    {
         i(t);
         auto low = lower_bound(v.begin(), v.end(), t, less_equal<int>());
-        
-        o(low-v.begin());
+
+        o(low - v.begin());
     }
     return 0;
 }
